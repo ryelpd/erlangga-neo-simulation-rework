@@ -1,0 +1,53 @@
+stages:
+  - build
+  - deploy
+  - cleanup
+
+variables:
+  IMAGE: "$PUB_REGION_JAKARTA-docker.pkg.dev/$PUB_EXPLORE_PROJECT_ID/$GCP_APP_NAME/$GCP_APP_NAME"
+
+before_script:
+  - echo "$PUB_EXPLORE_SERVICE_ACCOUNT" > key.json
+  - gcloud auth activate-service-account --key-file=key.json
+  - gcloud config set project $PUB_EXPLORE_PROJECT_ID
+  - gcloud auth configure-docker $PUB_REGION_JAKARTA-docker.pkg.dev --quiet
+
+build:
+  stage: build
+  script:
+    - |
+      docker buildx build \
+        --platform linux/amd64 \
+        -t "${IMAGE}:latest" \
+        -t "${IMAGE}:${CI_COMMIT_SHORT_SHA}" \
+        --push \
+        .
+  only:
+    - main
+
+deploy:
+  stage: deploy
+  script:
+    - |
+      gcloud run deploy "$GCP_APP_NAME" \
+        --image "${IMAGE}:latest" \
+        --region "$PUB_REGION_JAKARTA" \
+        --port 8080 \
+        --memory 256Mi \
+        --cpu 1
+  needs: ["build"]
+  only:
+    - main
+  environment:
+    name: production
+
+cleanup:
+  stage: cleanup
+  script:
+    - docker rmi "${IMAGE}:latest" || true
+    - docker rmi "${IMAGE}:${CI_COMMIT_SHORT_SHA}" || true
+    - docker image prune -f || true
+  needs: ["deploy"]
+  only:
+    - main
+  when: always
