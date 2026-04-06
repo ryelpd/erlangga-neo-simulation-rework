@@ -13,7 +13,7 @@ export function CategoryFilter({ selectedCategory, onSelectCategory }: CategoryF
     <div className="flex flex-wrap gap-2 justify-center">
       {categories.map((category) => {
         const config = category === 'All' 
-          ? { label: 'All', color: 'bg-slate-600' } 
+          ? { label: 'All', color: 'bg-slate-200 text-slate-700' } 
           : CATEGORY_CONFIG[category];
         const isSelected = selectedCategory === category;
 
@@ -23,8 +23,8 @@ export function CategoryFilter({ selectedCategory, onSelectCategory }: CategoryF
             onClick={() => onSelectCategory(category)}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
               isSelected
-                ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/30'
-                : 'bg-slate-800/50 text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-600'
+                ? 'bg-blue-500 text-white shadow-md shadow-blue-500/20'
+                : 'bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-slate-300 hover:bg-slate-200'
             }`}
           >
             {config.label}

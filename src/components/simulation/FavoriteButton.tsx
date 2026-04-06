@@ -24,8 +24,8 @@ export function FavoriteButton({ simulationId, size = 'md' }: FavoriteButtonProp
       }}
       className={`p-2 rounded-full transition-all hover:scale-110 ${
         favorite
-          ? 'text-yellow-400 bg-yellow-400/10'
-          : 'text-slate-500 hover:text-yellow-400 hover:bg-slate-700'
+          ? 'text-yellow-500 bg-yellow-50'
+          : 'text-slate-300 hover:text-yellow-500 hover:bg-yellow-50'
       }`}
     >
       <Star

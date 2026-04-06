@@ -17,8 +17,8 @@ export function Category() {
     return (
       <MainLayout>
         <div className="text-center py-16">
-          <h1 className="text-2xl font-bold text-slate-100 mb-4">Category not found</h1>
-          <Link to="/" className="text-blue-400 hover:text-blue-300">
+          <h1 className="text-2xl font-bold text-slate-900 mb-4">Category not found</h1>
+          <Link to="/" className="text-blue-600 hover:text-blue-700">
             ← Back to Home
           </Link>
         </div>
@@ -31,7 +31,7 @@ export function Category() {
       <div className="mb-8">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-slate-100 transition-colors mb-4"
+          className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors mb-4"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Home
@@ -41,12 +41,12 @@ export function Category() {
           <span className={`px-4 py-2 rounded-full text-sm font-medium text-white ${categoryConfig.color}`}>
             {categoryConfig.label}
           </span>
-          <span className="text-slate-400">
+          <span className="text-slate-500">
             {categorySimulations.length} simulations
           </span>
         </div>
 
-        <h1 className="text-3xl font-bold text-slate-100 mt-4">
+        <h1 className="text-3xl font-bold text-slate-900 mt-4">
           {categoryConfig.label} Simulations
         </h1>
       </div>

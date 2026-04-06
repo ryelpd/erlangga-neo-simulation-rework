@@ -1,5 +1,5 @@
 import { Suspense, lazy, type ComponentType } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Star } from 'lucide-react';
 import { LoadingSpinner } from '@/components/common/LoadingSpinner';
 import { ErrorBoundary } from '@/components/common/ErrorBoundary';
@@ -8,7 +8,6 @@ import { CATEGORY_CONFIG } from '@/types';
 import { useFavorites } from '@/hooks/useFavorites';
 import { useHistoryStore } from '@/stores/historyStore';
 
-// Lazy load all simulation components
 const simulations = import.meta.glob('../../simulations/**/index.tsx');
 
 const simulationComponents: Record<string, () => Promise<{ default: ComponentType }>> = {};
@@ -27,17 +26,20 @@ Object.entries(simulations).forEach(([path, importFunc]) => {
 export function SimulationPlayer() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { isFavorite, toggleFavorite } = useFavorites();
   const addToHistory = useHistoryStore((state) => state.addToHistory);
 
+  const isEmbed = searchParams.get('embed') === 'true';
+
   if (!id) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-slate-50">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-slate-100 mb-4">Invalid simulation ID</h1>
+          <h1 className="text-2xl font-bold text-slate-900 mb-4">Invalid simulation ID</h1>
           <Link
             to="/"
-            className="text-blue-400 hover:text-blue-300 transition-colors"
+            className="text-blue-600 hover:text-blue-700 transition-colors"
           >
             ← Back to Home
           </Link>
@@ -49,17 +51,16 @@ export function SimulationPlayer() {
   const simulation = getSimulationById(id);
   const categoryConfig = simulation ? CATEGORY_CONFIG[simulation.category] : null;
 
-  // Add to history on mount
   addToHistory(id);
 
   if (!simulation) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-slate-50">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-slate-100 mb-4">Simulation not found</h1>
+          <h1 className="text-2xl font-bold text-slate-900 mb-4">Simulation not found</h1>
           <Link
             to="/"
-            className="text-blue-400 hover:text-blue-300 transition-colors"
+            className="text-blue-600 hover:text-blue-700 transition-colors"
           >
             ← Back to Home
           </Link>
@@ -72,25 +73,44 @@ export function SimulationPlayer() {
     ? lazy(simulationComponents[id])
     : null;
 
+  if (isEmbed) {
+    return (
+      <ErrorBoundary>
+        <Suspense fallback={
+          <div className="flex items-center justify-center min-h-screen">
+            <LoadingSpinner size="lg" />
+          </div>
+        }>
+          {SimulationComponent ? (
+            <SimulationComponent />
+          ) : (
+            <div className="text-center py-16">
+              <p className="text-slate-500">Simulation component not found</p>
+            </div>
+          )}
+        </Suspense>
+      </ErrorBoundary>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-slate-900">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+    <div className="min-h-screen bg-slate-50">
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => navigate(-1)}
-                className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
               >
-                <ArrowLeft className="w-5 h-5 text-slate-400" />
+                <ArrowLeft className="w-5 h-5 text-slate-600" />
               </button>
               <div>
                 <div className="flex items-center gap-3">
                   <span className={`px-3 py-1 rounded-full text-xs font-medium text-white ${categoryConfig?.color}`}>
                     {categoryConfig?.label}
                   </span>
-                  <h1 className="text-xl font-semibold text-slate-100">{simulation.title}</h1>
+                  <h1 className="text-xl font-semibold text-slate-900">{simulation.title}</h1>
                 </div>
               </div>
             </div>
@@ -98,8 +118,8 @@ export function SimulationPlayer() {
               onClick={() => toggleFavorite(simulation.id)}
               className={`p-2 rounded-full transition-all hover:scale-110 ${
                 isFavorite(simulation.id)
-                  ? 'text-yellow-400 bg-yellow-400/10'
-                  : 'text-slate-500 hover:text-yellow-400 hover:bg-slate-800'
+                  ? 'text-yellow-500 bg-yellow-50'
+                  : 'text-slate-300 hover:text-yellow-500 hover:bg-yellow-50'
               }`}
             >
               <Star
@@ -112,7 +132,6 @@ export function SimulationPlayer() {
         </div>
       </header>
 
-      {/* Simulation Content */}
       <main className="max-w-7xl mx-auto p-4">
         <ErrorBoundary>
           <Suspense fallback={
@@ -123,8 +142,8 @@ export function SimulationPlayer() {
             {SimulationComponent ? (
               <SimulationComponent />
             ) : (
-              <div className="text-center py-16 bg-slate-800/50 rounded-xl">
-                <p className="text-slate-400">Simulation component not found</p>
+              <div className="text-center py-16 bg-white rounded-xl border border-slate-200">
+                <p className="text-slate-500">Simulation component not found</p>
               </div>
             )}
           </Suspense>

@@ -159,14 +159,7 @@ export const simulations: Simulation[] = [
     path: '/computer-science/sql-join-visualizer',
     tags: ['SQL', 'join', 'komputer', 'database'],
   },
-  // Mathematics (11)
-  {
-    id: 'math-level-1-6',
-    title: 'Math Level 1-6',
-    category: 'Mathematics',
-    path: '/mathematics/math-level-1-6',
-    tags: ['matematika', 'level', 'learning', 'math'],
-  },
+  // Mathematics (9)
   {
     id: 'konverter-satuan-universal',
     title: 'Konverter Satuan Universal',
@@ -233,10 +226,10 @@ export const simulations: Simulation[] = [
   // Physics (36)
   {
     id: 'arus-listrik-dc',
-    title: 'Arus Listrik DC',
+    title: 'Arus AC & DC',
     category: 'Physics',
     path: '/physics/arus-listrik-dc',
-    tags: ['arus listrik', 'DC', 'fisika', 'electric current'],
+    tags: ['arus listrik', 'DC', 'AC', 'fisika', 'electric current'],
   },
   {
     id: 'balon-udara',
