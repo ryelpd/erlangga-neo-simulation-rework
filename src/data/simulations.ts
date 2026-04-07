@@ -130,7 +130,14 @@ export const simulations: Simulation[] = [
     path: '/chemistry/titrasi-asam-basa',
     tags: ['titrasi', 'asam basa', 'kimia', 'titration'],
   },
-  // Computer Science (4)
+  {
+    id: 'cola-mentos',
+    title: 'Cola & Mentos',
+    category: 'Chemistry',
+    path: '/chemistry/cola-mentos',
+    tags: ['cola', 'mentos', 'nukleasi', 'CO2', 'geyser'],
+  },
+  // Computer Science (6)
   {
     id: 'algoritma-sorting',
     title: 'Algoritma Sorting',
@@ -158,6 +165,20 @@ export const simulations: Simulation[] = [
     category: 'ComputerScience',
     path: '/computer-science/sql-join-visualizer',
     tags: ['SQL', 'join', 'komputer', 'database'],
+  },
+  {
+    id: 'arduino-led',
+    title: 'Arduino LED',
+    category: 'ComputerScience',
+    path: '/computer-science/arduino-led',
+    tags: ['arduino', 'LED', 'elektronika', 'mikrokontroler'],
+  },
+  {
+    id: 'arduino-led-matrix',
+    title: 'Arduino LED Matrix',
+    category: 'ComputerScience',
+    path: '/computer-science/arduino-led-matrix',
+    tags: ['arduino', 'LED matrix', 'MAX7219', 'SPI', 'multiplexing'],
   },
   // Mathematics (9)
   {
@@ -223,7 +244,7 @@ export const simulations: Simulation[] = [
     path: '/mathematics/transformasi-vektor',
     tags: ['vektor', 'transformasi', 'matematika', 'vector'],
   },
-  // Physics (36)
+  // Physics (43)
   {
     id: 'arus-listrik-dc',
     title: 'Arus AC & DC',
@@ -475,6 +496,48 @@ export const simulations: Simulation[] = [
     category: 'Physics',
     path: '/physics/telepon-kabel',
     tags: ['telepon', 'kabel', 'fisika', 'string telephone'],
+  },
+  {
+    id: 'hukum-faraday',
+    title: 'Hukum Faraday',
+    category: 'Physics',
+    path: '/physics/hukum-faraday',
+    tags: ['faraday', 'induksi', 'elektromagnetik', 'GGL', 'flux'],
+  },
+  {
+    id: 'listrik-statis',
+    title: 'Listrik Statis',
+    category: 'Physics',
+    path: '/physics/listrik-statis',
+    tags: ['listrik statis', 'triboelektrik', 'polarisasi', 'coulomb', 'muatan'],
+  },
+  {
+    id: 'perubahan-wujud-zat',
+    title: 'Perubahan Wujud Zat',
+    category: 'Physics',
+    path: '/physics/perubahan-wujud-zat',
+    tags: ['perubahan wujud', 'fase', 'padat', 'cair', 'gas', 'termodinamika'],
+  },
+  {
+    id: 'rangkaian-listrik',
+    title: 'Rangkaian Listrik',
+    category: 'Physics',
+    path: '/physics/rangkaian-listrik',
+    tags: ['rangkaian', 'seri', 'paralel', 'listrik', 'ohm', 'kirchhoff'],
+  },
+  {
+    id: 'transformator',
+    title: 'Transformator',
+    category: 'Physics',
+    path: '/physics/transformator',
+    tags: ['transformator', 'induksi', 'elektromagnetik', 'step-up', 'step-down'],
+  },
+  {
+    id: 'hukum-bernoulli',
+    title: 'Hukum Bernoulli',
+    category: 'Physics',
+    path: '/physics/hukum-bernoulli',
+    tags: ['bernoulli', 'fluida', 'dinamis', 'tekanan', 'kecepatan', 'kontinuitas'],
   },
   // Earth Science (1)
   {
