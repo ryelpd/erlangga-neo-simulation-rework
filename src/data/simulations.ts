@@ -37,7 +37,7 @@ export const simulations: Simulation[] = [
     path: '/astronomy/tata-surya-draggable',
     tags: ['tata surya', 'planet', 'astronomi', 'solar system'],
   },
-  // Biology (8)
+  // Biology (9)
   {
     id: 'difusi',
     title: 'Difusi',
@@ -74,6 +74,13 @@ export const simulations: Simulation[] = [
     tags: ['golongan darah', 'ABO', 'biologi', 'blood type'],
   },
   {
+    id: 'jaring-makanan',
+    title: 'Rantai & Jaring Makanan',
+    category: 'Biology',
+    path: '/biology/jaring-makanan',
+    tags: ['rantai makanan', 'jaring makanan', 'ekosistem', 'food web', 'food chain', 'ekologi'],
+  },
+  {
     id: 'lab-fotosintesis',
     title: 'Lab Fotosintesis',
     category: 'Biology',
@@ -94,7 +101,7 @@ export const simulations: Simulation[] = [
     path: '/biology/pewarisan-kromosom-seks-manusia',
     tags: ['kromosom', 'seks', 'biologi', 'sex chromosomes'],
   },
-  // Chemistry (5)
+  // Chemistry (6)
   {
     id: 'membangun-atom',
     title: 'Membangun Atom',
@@ -204,10 +211,10 @@ export const simulations: Simulation[] = [
   },
   {
     id: 'konverter-waktu',
-    title: 'Konverter Waktu',
+    title: 'Waktu & Sudut',
     category: 'Mathematics',
     path: '/mathematics/konverter-waktu',
-    tags: ['waktu', 'konverter', 'matematika', 'time converter'],
+    tags: ['waktu', 'sudut', 'jam', 'matematika', 'clock angle'],
   },
   {
     id: 'permutasi-kombinasi',
@@ -539,13 +546,34 @@ export const simulations: Simulation[] = [
     path: '/physics/hukum-bernoulli',
     tags: ['bernoulli', 'fluida', 'dinamis', 'tekanan', 'kecepatan', 'kontinuitas'],
   },
-  // Earth Science (1)
+  // Earth Science (4)
   {
     id: 'siklus-hidrologi',
     title: 'Siklus Hidrologi',
     category: 'EarthScience',
     path: '/earth-science/siklus-hidrologi',
     tags: ['hidrologi', 'siklus', 'air', 'water cycle'],
+  },
+  {
+    id: 'siklus-batuan',
+    title: 'Siklus Batuan',
+    category: 'EarthScience',
+    path: '/earth-science/siklus-batuan',
+    tags: ['batuan', 'geologi', 'siklus', 'rock cycle', 'igneous', 'sedimen', 'metamorf'],
+  },
+  {
+    id: 'vulkanisme',
+    title: 'Vulkanisme',
+    category: 'EarthScience',
+    path: '/earth-science/vulkanisme',
+    tags: ['vulkanisme', 'gunung api', 'erupsi', 'magma', 'lava', 'geologi', 'volcano'],
+  },
+  {
+    id: 'pasang-surut',
+    title: 'Pasang Surut',
+    category: 'EarthScience',
+    path: '/earth-science/pasang-surut',
+    tags: ['pasang surut', 'tide', 'bulan', 'gravitasi', 'laut', 'astronomi'],
   },
 ];
 
