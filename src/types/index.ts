@@ -5,7 +5,9 @@ export type Category =
   | 'ComputerScience' 
   | 'Mathematics' 
   | 'Physics' 
-  | 'EarthScience';
+  | 'EarthScience'
+  | 'AlgebraLinear'
+  | 'Statistics';
 
 export interface Simulation {
   id: string;
@@ -29,4 +31,6 @@ export const CATEGORY_CONFIG: Record<Category, { label: string; color: string; c
   Mathematics: { label: 'Mathematics', color: 'bg-orange-500', count: 9 },
   Physics: { label: 'Physics', color: 'bg-rose-500', count: 36 },
   EarthScience: { label: 'Earth Science', color: 'bg-teal-500', count: 1 },
+  AlgebraLinear: { label: 'Algebra Linear', color: 'bg-cyan-500', count: 1 },
+  Statistics: { label: 'Statistics', color: 'bg-violet-500', count: 1 },
 };
