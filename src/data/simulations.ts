@@ -165,13 +165,6 @@ export const simulations: Simulation[] = [
     tags: ['fotosintesis', 'lab', 'biologi', 'photosynthesis'],
   },
   {
-    id: 'pembelahan-sel-mitosis',
-    title: 'Pembelahan Sel Mitosis',
-    category: 'Biology',
-    path: '/biology/pembelahan-sel-mitosis',
-    tags: ['mitosis', 'sel', 'biologi', 'cell division'],
-  },
-  {
     id: 'pewarisan-kromosom-seks-manusia',
     title: 'Pewarisan Kromosom Seks Manusia',
     category: 'Biology',
@@ -193,10 +186,10 @@ export const simulations: Simulation[] = [
     tags: ['rantai makanan', 'ekosistem', 'predator', 'mangsa', 'food chain', 'ekologi'],
   },
   {
-    id: 'struktur-dna',
+    id: 'struktur-d-n-a',
     title: 'Struktur DNA',
     category: 'Biology',
-    path: '/biology/struktur-dna',
+    path: '/biology/struktur-d-n-a',
     tags: ['dna', 'genetik', 'basa nitrogen', 'molekuler', 'biology'],
   },
   {
@@ -419,17 +412,17 @@ export const simulations: Simulation[] = [
     tags: ['compiler', 'interpreter', 'lexer', 'parser', 'AST', 'token', 'lexical analysis', 'parsing', 'sintaks'],
   },
   {
-    id: 'logika-fuzzy-ac',
+    id: 'logika-fuzzy-a-c',
     title: 'Logika Fuzzy AC',
     category: 'ComputerScience',
-    path: '/computer-science/logika-fuzzy-ac',
+    path: '/computer-science/logika-fuzzy-a-c',
     tags: ['fuzzy logic', 'AC', 'inverter', 'sistem kendali', 'AI', 'kecerdasan buatan', 'hysteresis', 'komputer'],
   },
   {
-    id: 'chatbot-nlp',
+    id: 'chatbot-n-l-p',
     title: 'Chatbot NLP Pipeline',
     category: 'ComputerScience',
-    path: '/computer-science/chatbot-nlp',
+    path: '/computer-science/chatbot-n-l-p',
     tags: ['chatbot', 'NLP', 'tokenisasi', 'stemming', 'vektorisasi', 'stopword', 'AI', 'pemrosesan bahasa', 'komputer'],
   },
   {
@@ -440,10 +433,10 @@ export const simulations: Simulation[] = [
     tags: ['cloud', 'load balancing', 'auto-scaling', 'server', 'DDoS', 'trafik', 'infrastruktur', 'komputer'],
   },
   {
-    id: 'enkripsi-e2ee',
+    id: 'enkripsi-e-2-e-e',
     title: 'Enkripsi End-to-End',
     category: 'ComputerScience',
-    path: '/computer-science/enkripsi-e2ee',
+    path: '/computer-science/enkripsi-e-2-e-e',
     tags: ['enkripsi', 'e2ee', 'kriptografi', 'kunci publik', 'kunci pribadi', 'asimetris', 'keamanan', 'komputer'],
   },
   {
@@ -476,10 +469,10 @@ export const simulations: Simulation[] = [
     tags: ['bayes', 'teorema', 'probabilitas', 'statistik', 'positif palsu', 'base rate fallacy', 'prior', 'posterior', 'matematika'],
   },
   {
-    id: 'platonic-solid-3d',
+    id: 'platonic-solid3d',
     title: 'Platonic Solid 3D',
     category: 'Mathematics',
-    path: '/mathematics/platonic-solid-3d',
+    path: '/mathematics/platonic-solid3d',
     tags: ['platonic', '3d', 'matematika', 'solid'],
   },
   {
@@ -504,11 +497,11 @@ export const simulations: Simulation[] = [
     tags: ['permutasi', 'kombinasi', 'matematika', 'combinatorics'],
   },
   {
-    id: 'perspektif-1-2-titik',
+    id: 'perspektif12-titik',
     title: 'Perspektif 1-2 Titik',
     category: 'Mathematics',
-    path: '/mathematics/perspektif-1-2-titik',
-    tags: ['perspektif', 'gambar', 'matematika', 'perspective'],
+    path: '/mathematics/perspektif12-titik',
+    tags: ['perspektif', 'gambar', 'matematika', 'perspective', 'vanishing point'],
   },
   {
     id: 'pizza-pecahan',
@@ -759,10 +752,10 @@ export const simulations: Simulation[] = [
     tags: ['kerapatan', 'udara', 'fisika', 'air density'],
   },
   {
-    id: 'konverter-rgb-cmyk',
+    id: 'konverter-r-g-b-c-m-y-k',
     title: 'Konverter RGB CMYK',
     category: 'Physics',
-    path: '/physics/konverter-rgb-cmyk',
+    path: '/physics/konverter-r-g-b-c-m-y-k',
     tags: ['RGB', 'CMYK', 'fisika', 'color converter'],
   },
   {
