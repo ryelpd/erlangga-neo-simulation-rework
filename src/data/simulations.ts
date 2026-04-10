@@ -433,10 +433,10 @@ export const simulations: Simulation[] = [
     tags: ['cloud', 'load balancing', 'auto-scaling', 'server', 'DDoS', 'trafik', 'infrastruktur', 'komputer'],
   },
   {
-    id: 'enkripsi-e-2-e-e',
+    id: 'enkripsi-e2-e-e',
     title: 'Enkripsi End-to-End',
     category: 'ComputerScience',
-    path: '/computer-science/enkripsi-e-2-e-e',
+    path: '/computer-science/enkripsi-e2-e-e',
     tags: ['enkripsi', 'e2ee', 'kriptografi', 'kunci publik', 'kunci pribadi', 'asimetris', 'keamanan', 'komputer'],
   },
   {
