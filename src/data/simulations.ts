@@ -17,13 +17,6 @@ export const simulations: Simulation[] = [
     tags: ['paralaks', 'gerak', 'astronomi', 'parallax'],
   },
   {
-    id: 'hukum-kepler-2',
-    title: 'Hukum Kepler 2',
-    category: 'Astronomy',
-    path: '/astronomy/hukum-kepler-2',
-    tags: ['kepler', 'hukum', 'astronomi', 'orbit'],
-  },
-  {
     id: 'jam-matahari',
     title: 'Jam Matahari',
     category: 'Astronomy',
