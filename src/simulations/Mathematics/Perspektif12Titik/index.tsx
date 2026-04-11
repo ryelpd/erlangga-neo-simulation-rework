@@ -8,12 +8,6 @@ interface VanishingPoint {
   y: number;
 }
 
-interface CornerPoint {
-  x: number;
-  y: number;
-  label: string;
-}
-
 export default function Perspektif12Titik(): ReactNode {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -27,8 +21,8 @@ export default function Perspektif12Titik(): ReactNode {
   const [objectDepth, setObjectDepth] = useState(100);
   const [objectWidth, setObjectWidth] = useState(120);
   const [objectHeight, setObjectHeight] = useState(80);
-  const [objectX, setObjectX] = useState(300);
-  const [objectY, setObjectY] = useState(280);
+  const [objectX] = useState(300);
+  const [objectY] = useState(280);
 
   const [isDraggingVp1, setIsDraggingVp1] = useState(false);
   const [isDraggingVp2, setIsDraggingVp2] = useState(false);

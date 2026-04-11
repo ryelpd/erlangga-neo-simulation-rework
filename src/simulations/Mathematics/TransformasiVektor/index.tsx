@@ -47,10 +47,6 @@ function toSvgCoords(v: Vector): { x: number; y: number } {
   return { x: CENTER + v.x * SCALE, y: CENTER - v.y * SCALE };
 }
 
-function toMathCoords(svgX: number, svgY: number): Vector {
-  return { x: (svgX - CENTER) / SCALE, y: -(svgY - CENTER) / SCALE };
-}
-
 export default function TransformasiVektor(): ReactNode {
   const [transformType, setTransformType] = useState<TransformType>('none');
   const [tx, setTx] = useState(2);
